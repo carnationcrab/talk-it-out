@@ -35,3 +35,87 @@ is more than one character in the string. Return `val` and set `majorKey` to the
 
 15. Your answer should be a string value that equals 7. Is that what you got?
 */
+
+// Step 1
+var majorKey = 42;
+
+// Step 2
+if (majorKey >= 53) {
+    majorKey += 42;
+}
+else {
+    majorKey -= 13;
+}
+console.log('Step 2: majorKey', majorKey);
+
+// Step 3
+majorKey += "11";
+console.log('Step 3: majorKey', majorKey);
+
+// Step 4
+var keyChars = [];
+
+for (var i = 0; i < majorKey.length; i++) {
+    keyChars[i] = majorKey.charAt(i);
+}
+console.log('Step 4: keyChars', keyChars);
+
+// Step 5
+keyChars.shift();
+keyChars.pop();
+console.log('Step 5: keyChars', keyChars);
+
+// Step 6
+var backwards= '';
+
+for (var j = keyChars.length - 1; j >= 0; j--) {
+    backwards = backwards + keyChars[j];
+}
+console.log('Step 6: backwards', backwards);
+
+// Step 7
+majorKey = parseInt(majorKey);
+backwards = parseInt(backwards);
+console.log('Step 7: majorKey', majorKey);
+console.log('Step 7: backwards', backwards);
+
+// Step 8
+majorKey += backwards;
+console.log('Step 8: majorKey', majorKey);
+
+// Step 9
+if (majorKey < 60) {
+    majorKey = 14;
+} else if (majorKey === 2930) {
+    majorKey = 27;
+} else {
+    majorKey = 2;
+}
+console.log('Step 9: majorKey', majorKey);
+
+// Step 10
+var x = 10;
+while (x > 0) {
+    majorKey++;
+    x--;
+}
+console.log('Step 10: majorKey', majorKey);
+
+// Step 11
+function stringConvert(val) {
+    var valStr = val.toString();
+
+    if (valStr.length > 1) {
+        valStr = valStr.substr(1);
+    }
+
+    majorKey = valStr;
+
+    return valStr;
+}
+
+stringConvert(majorKey);
+
+console.log('Step 11 Final: majorKey', majorKey);
+
+
